@@ -8,7 +8,7 @@
 /*
  * 反斜线把这个定义延续到下一行；
  *_ _func__和_Function_一样的；
- * 使用do{...}while(0)构造后的宏定义不会受到大括号、分号等的影响，总是会按你期望的方式调用运行。
+ * 使用do{...}while(0)构造后的宏定义不会受到大括号、分号等的影响，而且可以定义空宏而不受警告。
  */
 
 /* 
@@ -21,7 +21,7 @@
 
 
 #include<stdio.h>
-#define DEBUG_PRINT
+#define DEBUG_PRINT do{}while(0)
 
 #if defined(DEBUG_PRINT)
 #define DEBUG(...)\
