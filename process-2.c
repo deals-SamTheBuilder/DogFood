@@ -46,9 +46,10 @@ int main(void)
         int stat_val;
         pid_t child_pid;
 
-        child_pid = wait(&stat_val);
+        child_pid = waitpid(new_pid,&stat_val,WNOHANG);
         if(child_pid != new_pid)
-            perror("wait failed");
+            perror("waitpid failed");
+
         printf("Child has finished:\nPID = %d\n",child_pid);
         if(WIFEXITED(stat_val))//正常退出为非0值
             printf("Child exited with code %d\n",WEXITSTATUS(stat_val));
