@@ -10,4 +10,7 @@
 
 #ifndef _CHECK_H_H
 #define _CHECK_H_H
+/*
+ *define sth
+ */
 #endif
