@@ -62,7 +62,7 @@ int client_init(int port ,const char *ip)
     return sockfd;
 }
 
-int imb_heartbeat(int fd)
+int my_heartbeat(int fd)
 {
     int alive,error,idle,cnt,intv;
 
@@ -112,7 +112,7 @@ int imb_heartbeat(int fd)
     }
 }
 
- int imb_connect(int sockfd,const struct sockaddr *servaddr,socklen_t addrlen)
+ int my_connect(int sockfd,const struct sockaddr *servaddr,socklen_t addrlen)
 {
     int nsec;
     for(nsec = 1;nsec <= MAXSLEEP;nsec <<= 1)
@@ -144,14 +144,14 @@ int main(int argc,const char *argv[])
         exit(2);
     }
 
-    ret = imb_connect(fd,(struct sockaddr *)&servaddr,sizeof(servaddr));
+    ret = my_connect(fd,(struct sockaddr *)&servaddr,sizeof(servaddr));
     if(ret < 0)
     {
         DEBUG("connect error.\n");
         exit(3);
     }
 
-    ret = imb_heartbeat(fd);
+    ret = my_heartbeat(fd);
     if(ret < 0)
     {
         DEBUG("heartbeat error.\n");
