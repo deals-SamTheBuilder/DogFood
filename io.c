@@ -26,9 +26,9 @@ ssize_t	safe_write(int fd, const void *vptr, size_t n)
     {
     	if((nwritten = write(fd, ptr, nleft)) <= 0)
         {
-            if(nwritten < 0&&errno == EINTR)
+            if(nwritten < 0 && errno == EINTR) //被信号中断，重写
                 nwritten = 0;
-            else
+            else //error
                 return -1;
         }
 		nleft -= nwritten;
@@ -50,14 +50,14 @@ ssize_t safe_read(int fd,void *vptr,size_t n)
     {
         if((nread = read(fd,ptr,nleft)) < 0)
         {
-            if(errno == EINTR)//被信号中断
+            if(errno == EINTR) //被信号中断，重读
                 nread = 0;
-            else
+            else //出错
                 return -1;
         }
-        else
-        if(nread == 0)
-            break;
+        else if(nread == 0) //EOF
+        	break;
+        	
         nleft -= nread;
         ptr += nread;
     }
