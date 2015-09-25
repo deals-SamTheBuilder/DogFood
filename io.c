@@ -15,7 +15,7 @@
 
 ssize_t	safe_write(int fd, const void *vptr, size_t n)
 {
-	size_t	nleft;
+    size_t  nleft;
     ssize_t nwritten;
     const char *ptr;
 
@@ -24,7 +24,7 @@ ssize_t	safe_write(int fd, const void *vptr, size_t n)
     
     while(nleft > 0)
     {
-    if((nwritten = write(fd, ptr, nleft)) <= 0)
+    	if((nwritten = write(fd, ptr, nleft)) <= 0)
         {
             if(nwritten < 0&&errno == EINTR)
                 nwritten = 0;
@@ -33,7 +33,7 @@ ssize_t	safe_write(int fd, const void *vptr, size_t n)
         }
 		nleft -= nwritten;
 		ptr   += nwritten;
-	}
+     }
 	return(n);
 }
 
