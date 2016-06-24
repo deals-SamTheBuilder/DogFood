@@ -1,14 +1,26 @@
-SRC = example.c
-OBJS = example.o
+# variables
+
+SRC = 
+OBJS = main.o print.o
+TARGET = test
 
 CC = gcc
 
-test: sqlite3.o $(OBJS)
-	$(CC) -o test sqlite3.o $(OBJS) -ldl -lpthread
-sqlite3.o: sqlite3.c sqlite3.h
-	$(CC) -c sqlite3.c -o sqlite3.o  
-example1.o: $(SRC) sqlite3.h
-	$(CC) -c $(SRC) -o example1.o
+#############################
+
+$(TARGET): $(OBJS)
+	$(CC) -o $(TARGET) $(OBJS)
+
+# 自动推导
+main.o: print.h 
+
+print.o: print.c print.h
+	$(CC) -c -o print.o print.c
+
+# include
+include hi.mk
+hello:
+	echo $(tips)
 
 clean:
-	rm -f *.o test
+	rm -f $(TARGET) $(OBJS)
