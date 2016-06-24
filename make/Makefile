@@ -1,12 +1,18 @@
 # variables
 
-SRC = 
-OBJS = main.o print.o
-TARGET = test
+VPATH = ~/Desktop/DogFood/make/:. #当当前目录找不到文件时,去指定路径查找
 
-CC = gcc
+SRC = 
+OBJS := main.o print.o #加了:前面的变量不能使用后面的变量
+TARGET := test
+TARGET1 := test-bak
+
+CC := gcc
 
 #############################
+
+.PHONY:all
+all: $(TARGET) $(TARGET1)
 
 $(TARGET): $(OBJS)
 	$(CC) -o $(TARGET) $(OBJS)
@@ -17,10 +23,21 @@ main.o: print.h
 print.o: print.c print.h
 	$(CC) -c -o print.o print.c
 
+$(TARGET1) : 
+	$(CC) -o $(TARGET1) main-bak.c print.c
+
+
+define hi 
+	echo $(tips)
+endef
+
+# 显示指明伪目标,避免和文件重名
+.PHONY: clean hello
+
 # include
 include hi.mk
 hello:
-	echo $(tips)
+	$(hi)
 
 clean:
-	rm -f $(TARGET) $(OBJS)
+	rm -f $(TARGET) $(OBJS) $(TARGET1)
