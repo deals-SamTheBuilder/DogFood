@@ -8,6 +8,9 @@ TARGET := test
 TARGET1 := test-bak
 
 CC := gcc
+RM = rm -rf
+LOCAL_CFLAGS = -o #编译器参数
+LOCAL_LDFLAGS =  #链接器参数
 
 #############################
 
@@ -15,17 +18,10 @@ CC := gcc
 all: $(TARGET) $(TARGET1)
 
 $(TARGET): $(OBJS)
-	$(CC) -o $(TARGET) $(OBJS)
-
-# 自动推导
-main.o: print.h 
-
-print.o: print.c print.h
-	$(CC) -c -o print.o print.c
+	$(CC) $(LOCAL_CFLAGS) $(TARGET) $(OBJS)
 
 $(TARGET1) : 
-	$(CC) -o $(TARGET1) main-bak.c print.c
-
+	$(CC) $(LOCAL_CFLAGS) $(TARGET1) $(OBJS)
 
 define hi 
 	echo $(tips)
@@ -44,4 +40,4 @@ install:
 	mv $(TARGET) $(TARGET1) bin/
 
 clean:
-	rm -rf $(TARGET) $(OBJS) $(TARGET1) bin/
+	$(RM) $(TARGET) $(OBJS) $(TARGET1) bin/
