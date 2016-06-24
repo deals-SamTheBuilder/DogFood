@@ -32,12 +32,16 @@ define hi
 endef
 
 # 显示指明伪目标,避免和文件重名
-.PHONY: clean hello
+.PHONY: clean hello install
 
 # include
 include hi.mk
 hello:
 	$(hi)
 
+install:
+	mkdir bin
+	mv $(TARGET) $(TARGET1) bin/
+
 clean:
-	rm -f $(TARGET) $(OBJS) $(TARGET1)
+	rm -rf $(TARGET) $(OBJS) $(TARGET1) bin/
