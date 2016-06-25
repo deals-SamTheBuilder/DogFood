@@ -1,12 +1,11 @@
 # DogFoodm [![Analytics](https://ga-beacon.appspot.com/UA-79885141-1/welcome-page)](https://github.com/AnSwErYWJ/DogFood)
 [![Gitter](https://badges.gitter.im/AnSwErYWJ/DogFood.svg)](https://gitter.im/AnSwErYWJ/DogFood?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 [![stable](http://badges.github.io/stability-badges/dist/stable.svg)](http://github.com/badges/stability-badges)
-[![forthebadge](http://forthebadge.com/images/badges/fuck-it-ship-it.svg)](http://forthebadge.com)
 
 ## Introduction
 This is my food in my coding life.
 
-## Status [![forthebadge](http://forthebadge.com/images/badges/built-by-developers.svg)](http://forthebadge.com)
+## Status [![forthebadge]
 This reportory is considered as my own code base and still active development.
 I can't make this more perfect without you!
 
