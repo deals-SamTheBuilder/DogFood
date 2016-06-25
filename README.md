@@ -8,9 +8,9 @@ This reportory is considered as my own code base and still active development.
 I can't make this more perfect without you!
 
 ## List
-+ C
-+ Lua
-+ make
++ [C](https://github.com/AnSwErYWJ/DogFood/tree/master/C)
++ [Lua](https://github.com/AnSwErYWJ/DogFood/tree/master/Lua)
++ [make](https://github.com/AnSwErYWJ/DogFood/tree/master/make)
 
 ## About me
 - weibo：[@AnSwEr不是答案](http://weibo.com/1783591593)
