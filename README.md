@@ -1,5 +1,7 @@
 # DogFoodm
 
+[![Join the chat at https://gitter.im/AnSwErYWJ/DogFood](https://badges.gitter.im/AnSwErYWJ/DogFood.svg)](https://gitter.im/AnSwErYWJ/DogFood?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 ## Introduction
 This is my food in my coding life.
 
