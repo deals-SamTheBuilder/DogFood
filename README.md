@@ -1,5 +1,16 @@
-# DogFood
-This is my property in my coding life.
+# DogFoodm
+
+## Introduction
+This is my food in my coding life.
+
+## Status
+This reportory is considered as my own code base and still active development.
+I can't make this more perfect without you!
+
+## List
++ C
++ Lua
++ make
 
 ## About me
 - weibo：[@AnSwEr不是答案](http://weibo.com/1783591593)
