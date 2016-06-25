@@ -1,7 +1,6 @@
-# DogFoodm
+# DogFoodm [![Analytics](https://ga-beacon.appspot.com/UA-79885141-1/welcome-page)](https://github.com/AnSwErYWJ/DogFood)
 [![Gitter](https://badges.gitter.im/AnSwErYWJ/DogFood.svg)](https://gitter.im/AnSwErYWJ/DogFood?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 [![stable](http://badges.github.io/stability-badges/dist/stable.svg)](http://github.com/badges/stability-badges)
-[![Analytics](https://ga-beacon.appspot.com/UA-79885141-1/welcome-page)](https://github.com/AnSwErYWJ/DogFood)
 
 ## Introduction
 This is my food in my coding life.
