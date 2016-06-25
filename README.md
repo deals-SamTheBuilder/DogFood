@@ -1,4 +1,5 @@
 # DogFoodm
+[![Gitter](https://badges.gitter.im/AnSwErYWJ/DogFood.svg)](https://gitter.im/AnSwErYWJ/DogFood?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 ## Introduction
 This is my food in my coding life.
