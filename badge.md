@@ -8,6 +8,7 @@
 ```
 就可以显示聊天室的徽章啦：
 [![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/AnSwErYWJ/DogFood)
+
 单击即可进入聊天室，与开发者进行实时沟通。
 
 ## About me
