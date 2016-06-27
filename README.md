@@ -14,7 +14,7 @@ I can't make this more perfect without you!
 + [C](https://github.com/AnSwErYWJ/DogFood/tree/master/C)
 + [Lua](https://github.com/AnSwErYWJ/DogFood/tree/master/Lua)
 + [make](https://github.com/AnSwErYWJ/DogFood/tree/master/make)
-+ [ShellScript](https://github.com/AnSwErYWJ/DogFood/tree/master/ShellScript)
++ [sh](https://github.com/AnSwErYWJ/DogFood/tree/master/sh)
 
 ## About me
 [![forthebadge](http://forthebadge.com/images/badges/ages-20-30.svg)](http://forthebadge.com)
