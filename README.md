@@ -17,7 +17,9 @@ I can't make this more perfect without you!
 + [sh](https://github.com/AnSwErYWJ/DogFood/tree/master/sh)
 
 ## Environment
-Linux BashShell Lua 5.15
++ Linux 
++ bash shell 
++ Lua 5.15
 
 ## About me
 [![forthebadge](http://forthebadge.com/images/badges/ages-20-30.svg)](http://forthebadge.com)
