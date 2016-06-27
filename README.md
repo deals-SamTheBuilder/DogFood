@@ -16,6 +16,9 @@ I can't make this more perfect without you!
 + [make](https://github.com/AnSwErYWJ/DogFood/tree/master/make)
 + [sh](https://github.com/AnSwErYWJ/DogFood/tree/master/sh)
 
+## Environment
+Linux BashShell Lua 5.15
+
 ## About me
 [![forthebadge](http://forthebadge.com/images/badges/ages-20-30.svg)](http://forthebadge.com)
 - weibo：[@AnSwEr不是答案](http://weibo.com/1783591593)
