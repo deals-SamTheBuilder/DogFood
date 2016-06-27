@@ -1,0 +1,25 @@
+WIFI配置有两个方案：
+方案一：
+建立一个热点，开发板会自动连接上：
+用户名：
+密码：
+
+方案二：
+命令行方式连接
+1、adb shell
+2、su
+3、chmod -R 777 /data/misc/wifi
+4、在PC端编辑一个文件wpa_supplicant.conf，内容如下：
+ctrl_interface=/var/run/wpa_supplicant
+
+network={
+    ssid="用户名"
+    psk="密码"
+    key_mgmt=WPA-PSK
+    priority=1
+}
+
+5、PC端执行：adb push wpa_supplicant.conf /data/misc/wifi/wpa_supplicant.conf
+
+6、reboot，重启开发板之后，会连接到设置的WIFI上
+
