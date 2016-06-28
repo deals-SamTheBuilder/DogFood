@@ -1,4 +1,4 @@
-# Github 徽章汇总
+# Github 徽章整理
 > 相信很多在Github上玩耍过的同学们都会发现，在很多项目的Readme里会有各式各样的徽章，是不是顿时感觉到很高上大？没关系，读完这篇文章你就也可以拥有这些徽章了，甚至可以定制自己的徽章。
 
 ## 聊天室
@@ -11,16 +11,8 @@
 
 单击即可进入聊天室，与开发者进行实时沟通。
 
-## 个人信息
-[![forthebadge](http://forthebadge.com/images/badges/ages-12.svg)](http://forthebadge.com)
-```
-[![forthebadge](http://forthebadge.com/images/badges/ages-12.svg)](http://forthebadge.com)
-```
-
-[![forthebadge](http://forthebadge.com/images/badges/ages-20-30.svg)](http://forthebadge.com)
-```
-[![forthebadge](http://forthebadge.com/images/badges/ages-20-30.svg)](http://forthebadge.com)
-```
+## 其它
+还有一些有趣的徽章，可以参考[这里](http://forthebadge.com/)。
 
 ## About me
 [![forthebadge](http://forthebadge.com/images/badges/ages-20-30.svg)](http://forthebadge.com)
