@@ -27,8 +27,7 @@ I can't make this more perfect without you!
 - GitHub：[AnSwErYWJ](https://github.com/AnSwErYWJ)
 - Bolg：[AnSwEr不是答案的专栏](http://blog.csdn.net/u011192270)
 
-<Dogfood>
-    Copyright (C) <2016>  <AnSwErYWJ>
+    <Dogfood> Copyright (C) <2016>  <AnSwErYWJ>
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
