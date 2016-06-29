@@ -61,7 +61,7 @@
 还有更多的徽章格式与尺寸详见[这里](https://github.com/ellerbrock/open-source-badges)
 
 ## Licences
-### 
+### Software 
 [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)   
 ```
 [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)   
