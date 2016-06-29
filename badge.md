@@ -1,5 +1,7 @@
 # Github 徽章整理
 > 相信很多在Github上玩耍过的同学们都会发现，在很多项目的Readme里会有各式各样的徽章，是不是顿时感觉到很高上大？没关系，读完这篇文章你就也可以拥有这些徽章了，甚至可以定制自己的徽章。
+-------
+[TOC]
 
 ## 项目访问量统计
 
@@ -56,9 +58,19 @@
 [![Open Source Love](https://badges.frapsoft.com/os/v3/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badge/)    
 ```
 
-还有更多的格式详见[这里](https://github.com/ellerbrock/open-source-badges)
+还有更多的格式与尺寸详见[这里](https://github.com/ellerbrock/open-source-badges)
 
 ## Licences
+### 
+[![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)   
+```
+[![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)   
+```
+
+[![GPL Licence](https://badges.frapsoft.com/os/gpl/gpl.svg?v=103)](https://opensource.org/licenses/GPL-3.0/)  
+```
+[![GPL Licence](https://badges.frapsoft.com/os/gpl/gpl.svg?v=103)](https://opensource.org/licenses/GPL-3.0/)  
+```
 
 
 ## 其它
