@@ -28,7 +28,8 @@ I can't make this more perfect without you!
 - Bolg：[AnSwEr不是答案的专栏](http://blog.csdn.net/u011192270)
 
 
-    <Dogfood> Copyright (C) <2016>  <AnSwErYWJ>
+    <one line to give the program's name and a brief idea of what it does.>
+    Copyright (C) <2016>  <AnSwErYWJ>
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
