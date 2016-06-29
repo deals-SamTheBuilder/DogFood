@@ -38,7 +38,7 @@
 ```
 [![locked](http://badges.github.io/stability-badges/dist/locked.svg)](http://github.com/badges/stability-badges)
 ```
-[参考](https://github.com/badges/stability-badges)
+更多请看[这里](https://github.com/badges/stability-badges).
 
 ## 其它
 还有一些有趣的徽章，可以参考[这里](http://forthebadge.com/)。
