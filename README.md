@@ -18,7 +18,7 @@ I can't make this more perfect without you!
 
 ## Environment
 + Linux 
-+ bash shell 
++ Bash shell 
 + Lua 5.15
 
 ## About me
