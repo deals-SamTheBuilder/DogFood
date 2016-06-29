@@ -23,9 +23,10 @@ I can't make this more perfect without you!
 
 ## About me
 [![forthebadge](http://forthebadge.com/images/badges/ages-20-30.svg)](http://forthebadge.com)
-- weibo：[@AnSwEr不是答案](http://weibo.com/1783591593)
+- Weibo：[@AnSwEr不是答案](http://weibo.com/1783591593)
 - GitHub：[AnSwErYWJ](https://github.com/AnSwErYWJ)
 - Bolg：[AnSwEr不是答案的专栏](http://blog.csdn.net/u011192270)
+
 
     <Dogfood> Copyright (C) <2016>  <AnSwErYWJ>
 
