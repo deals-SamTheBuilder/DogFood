@@ -62,7 +62,7 @@
 
 ## Licences
 ### Software 
-开源软件协议的种类非常多,具体可以参考[阮一峰](https://github.com/ruanyf)的[如何选择开源许可证？](http://www.ruanyifeng.com/blog/2011/05/how_to_choose_free_software_licenses.html),本文列举了[MIT](https://opensource.org/licenses/mit-license.php)和[GPL](https://opensource.org/licenses/GPL-3.0/):
+开源软件协议的种类非常多,具体可以参考[阮一峰](https://github.com/ruanyf)的[如何选择开源许可证？](http://www.ruanyifeng.com/blog/2011/05/how_to_choose_free_software_licenses.html),本文列举了[MIT](https://opensource.org/licenses/mit-license.php)和[GPL](https://opensource.org/licenses/GPL-3.0/)：
 
 [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)   
 ```
