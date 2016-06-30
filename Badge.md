@@ -76,7 +76,8 @@
 还有更多的徽章格式与尺寸详见[这里](https://github.com/ellerbrock/open-source-badges)。
 
 ### Creative Commons
-[知识共享](https://zh.wikipedia.org/wiki/%E5%88%9B%E4%BD%9C%E5%85%B1%E7%94%A8)是一系列著作权许可方式，我们可以在[官网](https://creativecommons.org/choose/#metadata)选择自己的许可协议。如我采用了知识共享署名-相同方式共享：
+[知识共享](https://zh.wikipedia.org/wiki/%E5%88%9B%E4%BD%9C%E5%85%B1%E7%94%A8)是一系列著作权许可方式，我们可以在[官网](https://creativecommons.org/choose/#metadata)选择自己的许可协议。如我采用了知识共享署名-相同方式共享：  
+
 <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a> This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
 
 ## Others
@@ -88,5 +89,5 @@
 - GitHub：[AnSwErYWJ](https://github.com/AnSwErYWJ)
 - Blog：[AnSwEr不是答案的专栏](http://blog.csdn.net/u011192270)
 
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a> This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a> This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.  
 本作品采用知识共享署名-相同方式共享 4.0 国际许可协议进行许可。
