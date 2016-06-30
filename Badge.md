@@ -43,7 +43,7 @@
 
 ## Google Analytics
 Google Analytics是通过嵌入图像追踪项目访问量的一种方法。
-如[我](https://github.com/AnSwErYWJ)的[DogFood](https://github.com/AnSwErYWJ/DogFood)项目就内嵌了一个追踪图像:  
+如[我](https://github.com/AnSwErYWJ)的[DogFood](https://github.com/AnSwErYWJ/DogFood)项目就内嵌了一个追踪图像：  
 [![Analytics](https://ga-beacon.appspot.com/UA-79885141-1/welcome-page)](https://github.com/AnSwErYWJ/DogFood)
 
 具体制作过程可以[参考](https://github.com/igrigorik/ga-beacon)。
