@@ -40,7 +40,7 @@
 ```
 [![locked](http://badges.github.io/stability-badges/dist/locked.svg)](http://github.com/badges/stability-badges)
 ```
-更多请看[这里](https://github.com/badges/stability-badges).
+更多请看[这里](https://github.com/badges/stability-badges)。
 
 ## Open Source
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badge/)  
@@ -58,11 +58,11 @@
 [![Open Source Love](https://badges.frapsoft.com/os/v3/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badge/)    
 ```
 
-还有更多的徽章格式与尺寸详见[这里](https://github.com/ellerbrock/open-source-badges).
+还有更多的徽章格式与尺寸详见[这里](https://github.com/ellerbrock/open-source-badges)。
 
 ## Licences
 ### Software 
-开源软件协议的种类非常多,具体可以参考[阮一峰](https://github.com/ruanyf)的[<<如何选择开源许可证？>>](http://www.ruanyifeng.com/blog/2011/05/how_to_choose_free_software_licenses.html),本文列举了[MIT](https://opensource.org/licenses/mit-license.php)和[GPL(](https://opensource.org/licenses/GPL-3.0/)两种.
+开源软件协议的种类非常多,具体可以参考[阮一峰](https://github.com/ruanyf)的[如何选择开源许可证？](http://www.ruanyifeng.com/blog/2011/05/how_to_choose_free_software_licenses.html),本文列举了[MIT](https://opensource.org/licenses/mit-license.php)和[GPL(](https://opensource.org/licenses/GPL-3.0/)两种。
 
 [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)   
 ```
@@ -73,7 +73,9 @@
 ```
 [![GPL Licence](https://badges.frapsoft.com/os/gpl/gpl.svg?v=103)](https://opensource.org/licenses/GPL-3.0/)  
 ```
-还有更多的徽章格式与尺寸详见[这里](https://github.com/ellerbrock/open-source-badges)
+还有更多的徽章格式与尺寸详见[这里](https://github.com/ellerbrock/open-source-badges)。
+
+### 
 
 ## Others
 还有一些有趣的徽章，可以参考[这里](http://forthebadge.com/)。
