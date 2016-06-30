@@ -1,9 +1,18 @@
 # Github 徽章整理
-> 相信很多在Github上玩耍过的同学们都会发现，在很多项目的Readme里会有各式各样的徽章，是不是顿时感觉到很高上大？没关系，读完这篇文章你就也可以拥有这些徽章了，甚至可以定制自己的徽章。
+> 相信很多在Github上玩耍过的同学们都会发现，在很多项目的README里会有各式各样的徽章，是不是顿时感觉到很高上大？没关系，读完这篇文章你就也可以拥有这些徽章了，甚至可以定制自己的徽章。
 
 -------
 
+## NodeJs
+如果这是一个用npm管理的一个包,请添加：
+```
+[版本图片](https://www.npmjs.com/package/项目名)
+```
+
+如果你使用了第三方的组件,那可以[标识](https://david-dm.org/)是否为最新版本。
+
 ## TypeScript
+如果你是TypeScript开发者,那么请把下面的这些徽章用起来吧：
 [![TypeScript](https://badges.frapsoft.com/typescript/love/typescript.svg?v=101)](https://github.com/ellerbrock/typescript-badges/)
 ```
 [![TypeScript](https://badges.frapsoft.com/typescript/love/typescript.svg?v=101)](https://github.com/ellerbrock/typescript-badges/)
@@ -25,6 +34,11 @@
 ```
 还有更多的格式与尺寸详见[这里](https://github.com/ellerbrock/typescript-badges/)。
 
+## awesome
+如果你是[awesome](https://github.com/sindresorhus/awesome)系列的项目,那可以添加awesome徽章：
+```
+[图片](https://github.com/sindresorhus/awesome)
+```
 
 ## Google Analytics
 Google Analytics是通过嵌入图像追踪项目访问量的一种方法。
