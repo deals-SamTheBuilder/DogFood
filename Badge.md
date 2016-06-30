@@ -26,7 +26,12 @@
 还有更多的格式与尺寸详见[这里](https://github.com/ellerbrock/typescript-badges/)。
 
 
-## 项目访问量统计
+## Google Analytics
+Google Analytics是通过嵌入图像追踪项目访问量的一种方法。
+如(我)[https://github.com/AnSwErYWJ]的(DogFood)[https://github.com/AnSwErYWJ/DogFood]项目就内嵌了一副追踪图像:
+
+具体过程可以[参考](https://github.com/igrigorik/ga-beacon)。
+
 
 ## Gitter
 这是对issue功能的一个补充。正常情况下，当你给某个项目提出问题时，需要新建一个issue提出，并且需要等待开发者的回复（短则一两天，长则大半年），效率不是很高。而[Gitter](https://gitter.im)就提供了一个实时的聊天室，项目的开发者可以用github账号登陆之，为某个项目创建一个聊天室，然后再项目的Readme中加入如下代码：
