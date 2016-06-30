@@ -131,7 +131,10 @@ Google Analytics是通过嵌入图像追踪项目访问量的一种方法。
 <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a> This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
 
 ## Others
-还有一些有趣的徽章，可以参考[这里](http://forthebadge.com/)。
+Github上有一个[badges](https://github.com/boennemann/badges)的仓库,里面收集了一些常用的,大家可以参考一下。
+
+## Your Badge
+如果你需要自己定制一个徽章的话,可以参考[这里](http://shields.io/)。
 
 ## About me
 [![forthebadge](http://forthebadge.com/images/badges/ages-20-30.svg)](http://forthebadge.com)
