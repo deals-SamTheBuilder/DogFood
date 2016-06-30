@@ -47,7 +47,7 @@ Google Analytics是通过嵌入图像追踪项目访问量的一种方法。
 有很多的在线测试平台都提供测试状态标识,你可以把他们放到相应项目中的README中：
 - [Travis Ci](https://travis-ci.org/getting_started)
 - [Codecov](https://codecov.io/gh)
-- [Code Climate](ttps://codeclimate.com)
+- [Code Climate](https://codeclimate.com)
 - [bithound](https://www.bithound.io/)
 
 ## Version Stability
