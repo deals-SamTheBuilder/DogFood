@@ -2,7 +2,7 @@ SRC = BlackBox.c
 TARGET := blackbox
 
 CC := gcc
-LOCAL_CFLAGS = -rdynamic -g -o #编译器参数
+LOCAL_CFLAGS = -Wall -rdynamic -g -o #编译器参数
 LOCAL_LDFLAGS =  #链接器参数
 
 #############################

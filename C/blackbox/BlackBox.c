@@ -43,7 +43,7 @@ void blackbox_handler(int sig)
     printf("Stack information:\n");
     
     int j, nptrs;
-    #define SIZE 100
+#define SIZE 100
     void *buffer[100];
     char **strings;
     
@@ -129,14 +129,25 @@ int main(int argc,const char *argv[])
             
     }
 
-    int i, j;
+    int i;
     struct sigaction sa;
+    stack_t ss;
+
+    ss.ss_sp = malloc(SIGSTKSZ);
+    ss.ss_size = SIGSTKSZ;
+    ss.ss_flags = 0;
+
+    //在堆中为函数分配一块区域,作为改函数的栈使用
+    if(sigaltstack(&ss,NULL) == -1)
+    {
+        return EXIT_FAILURE;
+    }
     
     // 初始化信号处理函数数据结构
     memset(&sa, 0, sizeof(sa));
     sa.sa_handler = blackbox_handler;
     sigemptyset(&sa.sa_mask);
-    sa.sa_flags = 0;
+    sa.sa_flags = SA_ONSTACK;
     
     for (i = 0; i < sizeof(sigCatch)/sizeof(sigInfo); i++)
     {
