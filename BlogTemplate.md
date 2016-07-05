@@ -1,5 +1,6 @@
 ## About me
 [![forthebadge](http://forthebadge.com/images/badges/ages-20-30.svg)](http://forthebadge.com)
+- Email : [yuanweijie1993@gmail.com]
 - Weibo：[@AnSwEr不是答案](http://weibo.com/1783591593)
 - GitHub：[AnSwErYWJ](https://github.com/AnSwErYWJ)
 - Blog：[AnSwEr不是答案的专栏](http://blog.csdn.net/u011192270)
