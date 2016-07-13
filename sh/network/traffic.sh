@@ -2,6 +2,7 @@
 # ./traffic.sh networkCardName such as ./traffic.sh eth0
 #监控网卡流量
 
+
 if (($# != 1));then
     echo -e "Usage: ./traffic.sh networkCardName"
     exit
