@@ -1,9 +1,13 @@
 #!/bin/bash
-# ./network.sh eht0
+# ./traffic.sh networkCardName such as ./traffic.sh eth0
 #监控网卡流量
-   
+
+if (($# != 1));then
+    echo -e "Usage: ./traffic.sh networkCardName"
+    exit
+fi
+
 ETH=$1
-ETH=${ETH:-eth0}
 IP=`ifconfig $ETH|awk -F '[ :]+' '/inet addr/{print $4}'`
    
 while true;do
