@@ -17,8 +17,8 @@ I can't make this more perfect without you!
 + [sh](https://github.com/AnSwErYWJ/DogFood/tree/master/sh)
 
 ## Environment
-+ Linux 
-+ Bash shell 
++ Ubuntu/Centos 
++ Bash Shell 
 + Lua 5.15
 
 ## About me
