@@ -9,6 +9,6 @@ pids=`echo -e ${pids} | sed 's/\s/,/g'`
 
 top -p ${pids}
 
-if (($? != 0));then
+if [ $? -ne 0 ];then
     echo -e "Usage: sh mytop.sh [program]"
 fi
