@@ -1,14 +1,20 @@
 #!/bin/bash
-# top your program
+# top your programs
 
-pids=`pidof $1`
+# get pids
+for i in $*
+do
+    tmp=`pidof $i`
+    pids=${tmp}" "${pids}
+done
 #echo -e ${pids}
 
+# add , to pids
 pids=`echo -e ${pids} | sed 's/\s/,/g'`
 #echo -e ${pids}
 
 top -p ${pids}
 
 if [ $? -ne 0 ];then
-    echo -e "Usage: sh mytop.sh [program]"
+    echo -e "Usage: sh mytop.sh [programs]"
 fi
