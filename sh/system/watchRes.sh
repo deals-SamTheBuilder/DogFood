@@ -2,7 +2,7 @@
 # watch program rss
 
 if [ $# -ne 1 ];then
-    echo -e "Usage: sh watchRss.sh [program]"
+    echo -e "Usage: sh watchRes.sh [program]"
     exit
 fi
 
@@ -12,7 +12,7 @@ pids=`pidof $1`
 
 
 if [ $? -ne 0 ];then
-    echo -e "Usage: sh watchRss.sh [program]"
+    echo -e "Usage: sh watchRes.sh [program]"
     exit
 fi
 
@@ -22,7 +22,7 @@ do
     count=0
     total=0
 
-    echo -e "PID    RSS"
+    echo -e "PID    RES"
     for i in $pids
     do
         echo -n -e ${i}"  "
@@ -39,7 +39,7 @@ do
     total=$(($total/1024))
 
     echo "pids conut: "${count}
-    echo "RSS total: "${total} MB 
+    echo "RES total: "${total} MB 
 
     sleep 3
 done
