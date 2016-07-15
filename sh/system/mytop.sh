@@ -1,7 +1,7 @@
 #!/bin/bash
-# top your programs
+# top your programs (multiple program)
 
-# get pids
+# get pids from multiple argv
 for i in $*
 do
     tmp=`pidof $i`
@@ -9,7 +9,7 @@ do
 done
 #echo -e ${pids}
 
-# add , to pids
+# add "," to pids
 pids=`echo -e ${pids} | sed 's/\s/,/g'`
 #echo -e ${pids}
 
