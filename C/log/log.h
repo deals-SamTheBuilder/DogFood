@@ -17,7 +17,7 @@
 #define VA_SIZE 1024
 
 /* log print func */
-void print_msg(const char level, const char *fmt, ...);
+void print_log(const char level, const char *fmt, ...);
 
 #define	LEVEL_VERBOSE 0
 #define	LEVEL_DEBUG   1  //develop
@@ -37,35 +37,35 @@ void print_msg(const char level, const char *fmt, ...);
 #if defined(LEVEL_VERBOSE)
 #define LOG_VERBOSE(...)\
         do{\
-            print_msg('V', ##__VA_ARGS__);\
+            print_log('V', ##__VA_ARGS__);\
         }while(0)
 #endif
 
 #if defined(LEVEL_DEBUG)
 #define LOG_DEBUG(...)\
         do{\
-            print_msg('D', ##__VA_ARGS__);\
+            print_log('D', ##__VA_ARGS__);\
         }while(0)
 #endif
 
 #if defined(LEVEL_INFO)
 #define LOG_INFO(...)\
         do{\
-            print_msg('I', ##__VA_ARGS__);\
+            print_log('I', ##__VA_ARGS__);\
         }while(0)
 #endif
 
 #if defined(LEVEL_WARN)
 #define LOG_WRAN(...)\
         do{\
-            print_msg('W', ##__VA_ARGS__);\
+            print_log('W', ##__VA_ARGS__);\
         }while(0)
 #endif
 
 #if defined(LEVEL_ERROR)
 #define LOG_ERROR(...)\
         do{\
-            print_msg('E', ##__VA_ARGS__);\
+            print_log('E', ##__VA_ARGS__);\
         }while(0)
 #endif
 

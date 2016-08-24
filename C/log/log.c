@@ -9,7 +9,7 @@
 #include "log.h"
 #include <stdarg.h>
 
-void print_msg(const char level, const char *fmt, ...)
+void print_log(const char level, const char *fmt, ...)
 {
 	va_list ap;
 	char va_buf[VA_SIZE] = {'\0'};
