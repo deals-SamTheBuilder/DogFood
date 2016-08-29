@@ -20,6 +20,10 @@ I can't make this more perfect without you!
 + Ubuntu/Centos 
 + Bash Shell 
 + Lua 5.15
++ POSIX C
+
+## Reference
+- [libraries](https://github.com/gozfree/libraries)
 
 ## About me
 [![forthebadge](http://forthebadge.com/images/badges/ages-20-30.svg)](http://forthebadge.com)
