@@ -28,7 +28,7 @@ I can't make this more perfect without you!
 ## About me
 [![forthebadge](http://forthebadge.com/images/badges/ages-20-30.svg)](http://forthebadge.com)
 - WebSite：[http://www.answerywj.com](http://www.answerywj.com)
-- Email：[yuanweijie1993@gmail.com](gmail.com)
+- Email：[yuanweijie1993@gmail.com](https://mail.google.com)
 - GitHub：[AnSwErYWJ](https://github.com/AnSwErYWJ)
 - Blog：[AnSwEr不是答案的专栏](http://blog.csdn.net/u011192270)
 - Weibo：[@AnSwEr不是答案](http://weibo.com/1783591593)
