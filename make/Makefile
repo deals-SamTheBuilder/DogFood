@@ -15,10 +15,16 @@ LDSHFLAGS = -fPIC -shared # 动态库编译参数
 
 #############################
 
-# 显示指明伪目标,避免和文件重名
-.PHONY:all hello install clean
-all:
-	$(CC) $(CFLAGS) $(TARGET) $(LDFLAGS) $(SRC)
+# 显示指明伪目标,避免和文件重名,伪目标只是一个标签,不是一个文件.
+.PHONY: hello install cleantar cleanall cleanobj
+
+$(TARGET): $(OBJS)
+	$(CC) $(CFLAGS) $(TARGET) $(LDFLAGS) $(OBJS)
+
+main.o: main.c print.h
+	$(CC) $(CFLAGS) main.o -c main.c
+print.o: print.c print.h
+	$(CC) $(CFLAGS) print.o -c print.c
 
 #################
 define hi 
@@ -34,5 +40,12 @@ hello:
 
 install:
 
-clean:
-	$(RM)
+# 伪目标同样也可成为依赖
+cleanall: cleantar cleanobj
+	$(RM) $(OBJS) $(TARGET)
+
+cleantar:
+	$(RM) $(TARGET)
+
+cleanobj:
+	$(RM) $(OBJS)
