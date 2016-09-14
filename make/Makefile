@@ -8,16 +8,24 @@ TARGET := test
 
 CC := gcc
 RM := -rm -rf # -表示命令出错.继续执行,忽略错误.
-CFLAGS := -Wall -O2 -I./ # 编译器参数,C使用
+CPPFLAGS := # C预处理参数,一般设置I
+CFLAGS := -Wall -O2 # 编译器参数,C使用
+override CFLAGS += $(patsubst %,-I%,$(subst :, ,$(VPATH))) # 设置头文件搜索路径(-I)
 CXXFLAGS := # C++使用
-LDFLAGS :=  # 链接器参数
+LDFLAGS :=  # 链接器参数,如ld
 LDSHFLAGS := -fPIC -shared # 动态库编译参数
+
+autoGenerate := yes # 是否自动生成依赖
+rely := $(SRC:.c=.d) # 生成.d文件
 
 ####################
 # $< : 第一个依赖文件
-# $^ : 所有依赖文件
+# $^ : 所有依赖文件(去除重复,$+不去除)
 # $@ : 所有目标集合
+# D/F :目录/文件 ,如$(<D)
 ####################
+
+all: $(TARGET)
 
 $(TARGET): $(OBJS)
 	$(CC) $(CFLAGS) $(LDFLAGS) $^ -o $@
@@ -27,29 +35,49 @@ define generate-objs
 	$(CC) -c $(CFLAGS) $< -o $@
 endef
 
-#main.o: main.c print.h
-#	$(generate-objs)
-#print.o: print.c print.h
-#	$(generate-objs)
+###  判断变量类型
+#ifdef generate-objs
+#ifeq ($(origin generate-objs),file)
+#	echo "yes"
+#else
+#	echo "no"
+#endif
+#endif
 
+# 判断是否自动生成依赖
+ifeq ($(autoGenerate),no)
+# 不自动生成依赖
+## 隐含规则,不用写出来
+#main.o: main.c print.h
+#	$(CC) -c $(CFLAGS) $< -o $@
+#
+#print.o: print.c print.h
+#	$(CC) -c $(CFLAGS) $< -o $@
+
+else
 # 自动生成依赖
 %.d: %.c
-	@set -e; rm -f $@; \
-	$(CC) -MM $< > $@.$$$$; \ # 生成依赖文件
-	sed 's,\($*\)\.o[ :]*,\1.o $@ : ,g' < $@.$$$$ > $@; \ # 替换临时文件
-	rm -f $@.$$$$ # 删除临时文件
+	@set -e; rm -f $@ &> /dev/null; # 设置错误检查,若下面有语句执行错误则直接退出, 删除旧的.d文件\
+	$(CC) -MM $(CPPFLAGS) $< > $@.$$$$; # 生成依赖文件 \
+	sed 's,\($*\)\.o[ :]*,\1.o $@ : ,g' < $@.$$$$ > $@; # 替换临时文件 \
+	rm -f $@.$$$$ &> /dev/null # 删除临时文件
 
-include $(SRC:.c=.d) # 替换
+# 替换
+-include $(rely)
+
+endif
 
 #################
 # 显示指明伪目标,避免和文件重名,伪目标只是一个标签,不是一个文件.
-.PHONY: hello install
+.PHONY: hello install print tar dist TAGS check test
 define hi
 	@echo $(tips) # @不显示命令,只执行命令
 endef
 
-# include
+# 参数不是clean时才include
+ifneq ( $(MAKECMDGOALS),clean)
 -include hi.mk
+endif
 
 ################
 hello:
@@ -58,9 +86,9 @@ hello:
 install:
 
 #######################
-.PHONY: cleantar cleanall cleanobj
+.PHONY: cleantar clean cleanobj cleangen
 # 伪目标同样也可成为依赖
-cleanall: cleantar cleanobj
+clean: cleantar cleanobj cleangen
 	$(RM) $(OBJS) $(TARGET)
 
 cleantar:
@@ -68,3 +96,6 @@ cleantar:
 
 cleanobj:
 	$(RM) $(OBJS)
+
+cleangen:
+	$(RM) $(rely)
