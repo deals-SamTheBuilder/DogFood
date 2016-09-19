@@ -89,7 +89,6 @@ install:
 .PHONY: cleantar clean cleanobj cleangen
 # 伪目标同样也可成为依赖
 clean: cleantar cleanobj cleangen
-	$(RM) $(OBJS) $(TARGET)
 
 cleantar:
 	$(RM) $(TARGET)
