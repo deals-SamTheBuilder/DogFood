@@ -3,7 +3,7 @@ VPATH ?= ~/Desktop/DogFood/make/:.
 #vpath %.c %.h %.o ~/Desktop/DogFood/make/:.
 
 SRC := ./main.c ./print.c
-OBJS := main.o print.o # 加了:前面的变量不能使用后面的变量
+OBJS := ./main.o ./print.o # 加了:前面的变量不能使用后面的变量
 TARGET := test
 
 CC := gcc
