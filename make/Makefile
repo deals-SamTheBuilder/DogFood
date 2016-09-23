@@ -25,7 +25,7 @@ rely := $(SRC:.c=.d) # 生成.d文件
 # D/F :目录/文件 ,如$(<D)
 ####################
 
-all: $(TARGET)
+all: $(TARGET) # 默认只更新第一个目标,若有all,则可以指定多个目标
 
 $(TARGET): $(OBJS)
 	$(CC) $(CFLAGS) $(LDFLAGS) $^ -o $@
