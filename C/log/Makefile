@@ -1,10 +1,8 @@
 VPATH ?= .:$VPATH
 
-SRC = ./test.c
 ALL_SRC = ./test.c ./log.c
 LOG_SRC := ./log.c
 
-OBJS := $(SRC:.c=.o)
 ALL_OBJS := $(ALL_SRC:.c=.o)
 LOG_OBJS := $(LOG_SRC:.c=.o)
 
