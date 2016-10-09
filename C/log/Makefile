@@ -12,7 +12,7 @@ LOG_TARGET := ./liblog.so
 CC := gcc
 RM := -rm -rf
 CFLAGS := -Wall -O2
-LDFLAGS = -L -llog
+LDFLAGS = -L. -llog
 LDSHFLAGS = -fPIC -shared
 CPPFLAGS = -I./
 
@@ -25,7 +25,7 @@ tmp := ./*.d.*
 
 all : $(TARGET)
 $(TARGET): $(ALL_OBJS)
-	$(CC) $(CFLAGS) $(LDFLAGS) $(CPPFLAGS) $^ -o $@
+	$(CC) $(CFLAGS) $(CPPFLAGS) $^ -o $@
 
 so : $(LOG_TARGET)
 $(LOG_TARGET): $(LOG_SRC)
