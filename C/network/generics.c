@@ -8,21 +8,24 @@
 #include <stdio.h>
 #include <stdarg.h>
 
+#define XXX_NET static
+#define ERROR -1
+
 #define ERROR_LEN 255
 
-static void error(char *err_buf,const char *fmt,...);
+XXX_NET void handle_error(char *error,const char *fmt,...);
 
-static void error(char *err_buf,const char *fmt,...)
+XXX_NET void handle_error(char *error,const char *fmt,...)
 {
     //assert(err_buf);
-    if ( err_buf == NULL )
+    if ( error == NULL )
         return;
 
     va_list ap;
 
     va_start(ap,fmt); // 指向可变参数的首地址
 
-    vsnprintf(err_buf,ERROR_LEN,fmt,ap);
+    vsnprintf(error,ERROR_LEN,fmt,ap); // 存入err_buf
 
     va_end(ap);
 }
@@ -31,7 +34,7 @@ int main()
 {
     char buf[ERROR_LEN] = {0};
 
-    error(buf,"This is test %s function","error");
+    handle_error(buf,"This is test %s function","error");
 
     printf("%s\n",buf);
 
