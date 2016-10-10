@@ -11,4 +11,5 @@
 void welcome()
 {
     printf("welcome to my code world!\n");
+    printf("%s\n",hi);
 }

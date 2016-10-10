@@ -8,6 +8,8 @@
 #ifndef _WELCOME_H
 #define _WELCOME_H
 
+#define hi "welcome"
+
 void welcome();
 
 #endif
