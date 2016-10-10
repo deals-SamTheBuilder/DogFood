@@ -10,10 +10,11 @@ TARGET := ./test
 LOG_TARGET := ./liblog.so
 
 CC := gcc
+PLUS := g++ # 可以链接C++库
 RM := -rm -rf
-CFLAGS := -Wall -O2
+CFLAGS := -Wall -O2 -fPIC
 LDFLAGS = -L. -llog
-LDSHFLAGS = -fPIC -shared
+LDSHFLAGS = -shared
 CPPFLAGS = -I./
 
 rely := $(ALL_SRC:.c=.d) # 生成.d文件
@@ -25,11 +26,11 @@ tmp := ./*.d.*
 
 all : $(TARGET)
 $(TARGET): $(ALL_OBJS)
-	$(CC) $(CFLAGS) $(CPPFLAGS) $^ -o $@
+	$(PLUS) $(CFLAGS) $(CPPFLAGS) $^ -o $@
 
 so : $(LOG_TARGET)
-$(LOG_TARGET): $(LOG_SRC)
-	$(CC) $(LDSHFLAGS) $(CFLAGS) $(CPPFLAGS) $^ -o $@
+$(LOG_TARGET): $(LOG_OBJS)
+	$(PLUS) $(LDSHFLAGS) $(CPPFLAGS) $^ -o $@
 
 # 自动生成依赖
 $(rely): $(ALL_SRC)
