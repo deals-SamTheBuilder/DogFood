@@ -3,17 +3,21 @@ VPATH ?= ~/Desktop/DogFood/make/:.
 #vpath %.c %.h %.o ~/Desktop/DogFood/make/:.
 
 SRC := ./main.c ./print.c
+HELLO_SRC := ./print.c
 OBJS := ./main.o ./print.o # 加了:前面的变量不能使用后面的变量
+HELLO_OBJS := ./print.o
+HELLO_TARGET := ./libhello.so
 TARGET := test
 
 CC := gcc
+PLUS := g++
 RM := -rm -rf # -表示命令出错.继续执行,忽略错误.
-CPPFLAGS := # C预处理参数,一般设置I
-CFLAGS := -Wall -O2 -m64 -D_GNU_SOURCE # 编译器参数,C使用
-override CFLAGS += $(patsubst %,-I%,$(subst :, ,$(VPATH))) # 设置头文件搜索路径(-I)
+CPPFLAGS := -I ./# C预处理参数,一般设置I
+CFLAGS := -Wall -O2 -m64 -D_GNU_SOURCE -fPIC # 编译器参数,C使用
+#override CFLAGS += $(patsubst %,-I%,$(subst :, ,$(VPATH))) # 设置头文件搜索路径(-I)
 CXXFLAGS := # C++使用
-LDFLAGS :=  # 链接器参数,如ld
-LDSHFLAGS := -fPIC -shared # 动态库编译参数
+LDFLAGS :=  -L. -lhello # 链接器参数,如ld
+LDSHFLAGS := -shared # 动态库编译参数
 
 autoGenerate := yes # 是否自动生成依赖
 rely := $(SRC:.c=.d) # 生成.d文件
@@ -27,10 +31,17 @@ rely := $(SRC:.c=.d) # 生成.d文件
 # $* ：去掉后缀的当前目标名。例如，若当前目标是pro.o，则$*表示pro。
 ####################
 
+.PHONY: all so
+
 all: $(TARGET) # 默认只更新第一个目标,若有all,则可以指定多个目标
 
 $(TARGET): $(OBJS)
-	$(CC) $(CFLAGS) $(LDFLAGS) $^ -o $@
+	$(PLUS) $(CFLAGS) $(CPPFLAGS) $^ -o $@
+
+so : $(HELLO_TARGET)
+
+$(HELLO_TARGET): $(HELLO_OBJS)
+	$(PLUS) $(LDSHFLAGS) $(CPPFLAGS) $^ -o $@
 
 # 命令包
 define generate-objs
@@ -88,9 +99,9 @@ hello:
 install:
 
 #######################
-.PHONY: cleantar clean cleanobj cleangen
+.PHONY: cleantar clean cleanobj cleangen cleanso
 # 伪目标同样也可成为依赖
-clean: cleantar cleanobj cleangen
+clean: cleantar cleanobj cleangen cleanso
 
 cleantar:
 	$(RM) $(TARGET)
@@ -100,3 +111,6 @@ cleanobj:
 
 cleangen:
 	$(RM) $(rely)
+
+cleanso:
+	$(RM) $(HELLO_TARGET)
