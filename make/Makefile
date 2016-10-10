@@ -36,12 +36,12 @@ rely := $(SRC:.c=.d) # 生成.d文件
 all: $(TARGET) # 默认只更新第一个目标,若有all,则可以指定多个目标
 
 $(TARGET): $(OBJS)
-	$(PLUS) $(CFLAGS) $(CPPFLAGS) $^ -o $@
+	$(PLUS) $(CFLAGS) $^ -o $@
 
 so : $(HELLO_TARGET)
 
 $(HELLO_TARGET): $(HELLO_OBJS)
-	$(PLUS) $(LDSHFLAGS) $(CPPFLAGS) $^ -o $@
+	$(PLUS) $(LDSHFLAGS) $^ -o $@
 
 # 命令包
 define generate-objs
