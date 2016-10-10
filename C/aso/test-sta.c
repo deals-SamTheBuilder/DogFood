@@ -6,7 +6,7 @@
  ************************************************************************/
 
 #include<stdio.h>
-#include"welcome.h"
+//#include"welcome.h"
 
 int main(void)
 {
