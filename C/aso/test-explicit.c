@@ -7,7 +7,6 @@
 
 #include<stdio.h>
 #include<dlfcn.h>
-//不需要包含导出函数的头文件
 
 #define LIB "./libwelcome.so"
 
