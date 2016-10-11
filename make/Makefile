@@ -16,7 +16,7 @@ CPPFLAGS := -I ./# C预处理参数,一般设置I
 CFLAGS := -Wall -O2 -m64 -D_GNU_SOURCE -fPIC # 编译器参数,C使用
 #override CFLAGS += $(patsubst %,-I%,$(subst :, ,$(VPATH))) # 设置头文件搜索路径(-I)
 CXXFLAGS := # C++使用
-LDFLAGS :=  -L. -lhello # 链接器参数,如ld
+LDFLAGS :=  -L. -lhello # 链接器参数,如ld ,最好放在源文件之后.
 LDSHFLAGS := -shared # 动态库编译参数
 
 autoGenerate := yes # 是否自动生成依赖

@@ -23,8 +23,8 @@ PLUS := g++ # 可以链接C++库
 AR = ar crv
 RM := -rm -rf
 CFLAGS := -Wall -O2 -fPIC
-IMP_LDFLAGS = -L. -lwelcome
-EX_LDFLAGS = -ldl
+IMP_LDFLAGS = -L. -lwelcome # 放在最后
+EX_LDFLAGS = -ldl # 放在最后
 STA_LDFLAGS = ./libwelcome.a
 LDSHFLAGS = -shared
 CPPFLAGS = -I./
@@ -49,13 +49,13 @@ $(WEL_A_TARGET): $(WEL_OBJS)
 # 隐式调用动态库
 implicit : $(IMP_TARGET)
 $(IMP_TARGET): $(IMP_OBJS)
-	$(PLUS) $(IMP_LDFLAGS) $^ -o $@
+	$(PLUS) $^ -o $@ $(IMP_LDFLAGS)
 	-export LD_LIBRARY_PATH=$(pwd):$LD_LIBRARY_PATH
 
 # 显式调用动态库
 explicit : $(EX_TARGET)
 $(EX_TARGET): $(EX_OBJS)
-	$(PLUS) $(EX_LDFLAGS) $^ -o $@
+	$(PLUS)  $^ -o $@ $(EX_LDFLAGS)
 
 # 调用静态库
 sta : $(STA_TARGET)
