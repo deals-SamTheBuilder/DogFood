@@ -19,3 +19,6 @@ adb install xxx.apk
 # 卸载程序
 # 包名在xml文件中查看
 adb uninstall com.xxx.xxx
+
+# 查看IP
+adb shell netcfg

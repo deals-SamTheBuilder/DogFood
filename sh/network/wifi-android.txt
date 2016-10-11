@@ -1,8 +1,6 @@
 WIFI配置有两个方案：
 方案一：
-建立一个热点，开发板会自动连接上：
-用户名：AISpeechCN_5G
-密码：speech888
+建立一个同名(已有配置的wifi名)热点，开发板会自动连接上.
 
 方案二：
 命令行方式连接
@@ -21,5 +19,9 @@ network={
 
 5、PC端执行：adb push wpa_supplicant.conf /data/misc/wifi/wpa_supplicant.conf
 
-6、reboot，重启开发板之后，会连接到设置的WIFI上
+6、reboot或执行下面的命令，重启开发板之后，会连接到设置的WIFI上
+    adb shell svc wifi enable # open wifi
+    adb shell svc wifi disable # close wifi
+
+
 
