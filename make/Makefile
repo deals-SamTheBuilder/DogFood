@@ -15,6 +15,7 @@ RM := -rm -rf # -表示命令出错.继续执行,忽略错误.
 CPPFLAGS := -I ./# C预处理参数,一般设置I
 CFLAGS := -Wall -O2 -m64 -D_GNU_SOURCE -fPIC # 编译器参数,C使用
 #override CFLAGS += $(patsubst %,-I%,$(subst :, ,$(VPATH))) # 设置头文件搜索路径(-I)
+CFLAGS += -D__ANSWER__ #宏定义
 CXXFLAGS := # C++使用
 LDFLAGS :=  -L. -lhello # 链接器参数,如ld ,最好放在源文件之后.
 LDSHFLAGS := -shared # 动态库编译参数
@@ -99,6 +100,7 @@ install:
 #######################
 .PHONY: cleantar clean cleanobj cleangen cleanso
 # 伪目标同样也可成为依赖
+
 clean: cleantar cleanobj cleangen cleanso
 
 cleantar:
