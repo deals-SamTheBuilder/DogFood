@@ -22,3 +22,6 @@ adb uninstall com.xxx.xxx
 
 # 查看IP
 adb shell netcfg
+
+# 查看日志,并打印时间,进程,线程.
+adb logcat -v threadtime
