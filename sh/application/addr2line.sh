@@ -5,7 +5,7 @@
 addr2line -e $1 $2 -f
 
 if (($? != 0));then
-    echo -e "Usage: ./addr2line.sh execute_file addr"
+    echo -e "Usage: ./addr2line.sh execute_file(*.so) addr"
 fi
 
 
