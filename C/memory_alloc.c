@@ -62,8 +62,11 @@ void *REALLOC(void *mem,size_t new_size)
 
 void FREE(void *mem)
 {
-    free(mem);
-    mem = NULL;
+    if (mem != NULL)
+    {
+        free(mem);
+        mem = NULL;
+    }
 }
 
 int main(void)
