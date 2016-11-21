@@ -5,11 +5,17 @@
 	> Created Time: Wed 16 Nov 2016 10:08:06 AM CST
  ************************************************************************/
 
+/*
+ * Usage: channel_convert input_channel(s) input_file output_channel(s) output_file
+ *
+ * 支持音频切割(切尾巴)和合成(一路到多路,最大16路)
+ */
+
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
 
-void *my_calloc(size_t n,size_t size)
+void *audio_calloc(size_t n,size_t size)
 {
     void *men;
     
@@ -23,7 +29,7 @@ void *my_calloc(size_t n,size_t size)
     return men;
 }
 
-void my_free(void *men)
+void audio_free(void *men)
 {
     if (men != NULL)
     {
@@ -81,8 +87,8 @@ int main(int argc, const char *argv[])
     }
 
     int frame_len = sizeof(short int);
-    short int *in_buf = (short int *)my_calloc(raw,frame_len);
-    short int *out_buf = (short int *)my_calloc(new,frame_len);
+    short int *in_buf = (short int *)audio_calloc(raw,frame_len);
+    short int *out_buf = (short int *)audio_calloc(new,frame_len);
     
     int i = 0;
     
@@ -106,8 +112,8 @@ int main(int argc, const char *argv[])
    
     printf("\nSuccess\n");
 
-    my_free(in_buf);
-    my_free(out_buf);
+    audio_free(in_buf);
+    audio_free(out_buf);
     fclose(in);
     fclose(out);
     
