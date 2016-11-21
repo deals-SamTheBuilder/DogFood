@@ -8,7 +8,7 @@
 /*
  * Usage: channel_convert input_channel(s) input_file output_channel(s) output_file
  *
- * 支持音频切割(切尾巴)和合成(一路到多路,最大16路)
+ * Function: 支持音频切割(切尾巴)和合成(一路到多路,最大16路)
  */
 
 #include<stdio.h>
@@ -26,22 +26,20 @@ int main(int argc, const char *argv[])
     
     int raw = atoi(argv[1]);
     int new = atoi(argv[3]);
-    if (raw < 0 || new < 0)
+    if (raw < 0 || new < 0 || raw > 16 || new > 16)
     {
-        fprintf(stderr,"Error: channel(s) must be positive number");
+        fprintf(stderr,"Error: channel(s) must be positive number and max channels is 16.\n");
         exit(EXIT_FAILURE);
     }
-    
-    printf("Running message:\n  input_file:%s\n  input_channel(s):%d\n  output_file:%s\n  output_channel(s):%d\n\n",argv[2],raw,argv[4],new);
     
     /* channel judge */
     if (raw >= new)
     {
         printf("Action: cut audio data\n");
     }
-    else if(raw != 1 || new > 16)
+    else if(raw != 1)
     {
-        fprintf(stderr,"Error: only one channel data can be synthetised to multichannel(max is 16) audio data\n");
+        fprintf(stderr,"Error: only one channel data can be synthetised to multichannel audio data.\n");
         exit(EXIT_FAILURE);
     }
     else
@@ -67,6 +65,8 @@ int main(int argc, const char *argv[])
     int frame_len = sizeof(short int);
     short int *in_buf = (short int *)audio_calloc(raw,frame_len);
     short int *out_buf = (short int *)audio_calloc(new,frame_len);
+    
+    printf("Running message:\n  input_file:%s\n  input_channel(s):%d\n  output_file:%s\n  output_channel(s):%d\n\n",argv[2],raw,argv[4],new);
     
     int i = 0;
     

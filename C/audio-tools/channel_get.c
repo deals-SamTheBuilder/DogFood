@@ -8,7 +8,7 @@
 /*
  * Usage: channel_get input_channel(s) input_file output_channel_number output_file
  *
- * 获取输入音频的某个通道的数据
+ * Function: 获取输入音频的某个通道的数据
  *
  */
 
@@ -27,13 +27,11 @@ int main(int argc, const char *argv[])
     
     int raw = atoi(argv[1]);
     int n = atoi(argv[3]);
-    if (raw < 0 || n < 0)
+    if (raw < 0 || n < 0 || raw > 16 || n > 16)
     {
-        fprintf(stderr,"Error: channel(s) must be positive number");
+        fprintf(stderr,"Error: channel(s) must be positive number and max channels is 16.\n");
         exit(EXIT_FAILURE);
     }
-    
-    printf("Running message:\n  input_file:%s\n  input_channel(s):%d\n  output_file:%s\n  output_channel(s):%d\n\n",argv[2],raw,argv[4],n);
     
     /* channel judge */
     if (raw >= n)
@@ -42,7 +40,7 @@ int main(int argc, const char *argv[])
     }
     else
     {
-        fprintf(stderr,"Error: %s is only %d channels,No.%d output_channel out of range\n",argv[2],raw,n);
+        fprintf(stderr,"Error: %s is only %d channels,No.%d output_channel out of range.\n",argv[2],raw,n);
         exit(EXIT_FAILURE);
     }
 
@@ -64,6 +62,8 @@ int main(int argc, const char *argv[])
     int frame_len = sizeof(short int);
     short int *in_buf = (short int *)audio_calloc(raw,frame_len);
     short int *out_buf = (short int *)audio_calloc(1,frame_len);
+    
+    printf("Running message:\n  input_file:%s\n  input_channel(s):%d\n  output_file:%s\n  output_channel(s):%d\n\n",argv[2],raw,argv[4],n);
     
     while(1)
     {
