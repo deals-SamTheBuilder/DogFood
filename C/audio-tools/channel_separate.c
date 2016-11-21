@@ -8,63 +8,29 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
-
-void *audio_calloc(size_t n,size_t size)
-{
-    void *men;
-    
-    men = (void *)calloc(n,size);
-    if(men == NULL)
-    {
-        fprintf(stderr,"Error:calloc failed!\n");
-        exit(EXIT_FAILURE);
-    }
-    
-    return men;
-}
-
-void audio_free(void *men)
-{
-    if (men != NULL)
-    {
-        free(men);
-        men = NULL;
-    }
-}
+#include"buffer.h"
 
 int main(int argc, const char *argv[])
 {
-    if(argc != 5)
+    if(argc != 4)
     {
-        fprintf(stderr,"Usage: channel_convert input_channel(s) input_file output_channel(s) output_file\n");
+        fprintf(stderr,"Usage: channel_convert input_channel(s) input_file output_basename\n");
         exit(EXIT_FAILURE);
     }
     
     int raw = atoi(argv[1]);
-    int new = atoi(argv[3]);
-    if (raw < 0 || new < 0)
+    if (raw < 0)
     {
         fprintf(stderr,"Error: channel(s) must be positive number");
         exit(EXIT_FAILURE);
     }
-    
-    printf("Running message:\n  input_file:%s\n  input_channel(s):%d\n  output_file:%s\n  output_channel(s):%d\n\n",argv[2],raw,argv[4],new);
-    
-    /* channel judge */
-    if (raw >= new)
-    {
-        printf("Action: cut audio data\n");
-    }
-    else if(raw != 1 || new > 16)
-    {
-        fprintf(stderr,"Error: only one channel data can be synthetised to multichannel(max is 16) audio data\n");
-        exit(EXIT_FAILURE);
-    }
     else
     {
-        printf("Action: synthetise audio data\n");
+        printf("Action: separate channel(s)\n");
     }
-
+    
+    printf("Running message:\n  input_file:%s\n  input_channel(s):%d\n  output_basename:%s\n\n",argv[2],raw,argv[3]);
+    
     /* open file */
     FILE *in = fopen(argv[2],"rb");
     if(in == NULL)
@@ -73,7 +39,7 @@ int main(int argc, const char *argv[])
         exit(EXIT_FAILURE);
     }
 
-    FILE *out = fopen(argv[4],"wb");
+    FILE *out = fopen(argv[3],"wb");
     if(out == NULL)
     {
         fprintf(stderr,"Error:%s open failed!\n",argv[4]);

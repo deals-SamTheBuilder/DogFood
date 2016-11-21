@@ -14,29 +14,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
-
-void *audio_calloc(size_t n,size_t size)
-{
-    void *men;
-    
-    men = (void *)calloc(n,size);
-    if(men == NULL)
-    {
-        fprintf(stderr,"Error:calloc failed!\n");
-        exit(EXIT_FAILURE);
-    }
-    
-    return men;
-}
-
-void audio_free(void *men)
-{
-    if (men != NULL)
-    {
-        free(men);
-        men = NULL;
-    }
-}
+#include"buffer.h"
 
 int main(int argc, const char *argv[])
 {
@@ -97,7 +75,7 @@ int main(int argc, const char *argv[])
         if(fread(in_buf,frame_len,raw,in) != raw)
             break;
 
-        for(i = 0;i <= new;i++)
+        for(i = 0;i < new;i++)
         {
             if (raw == 1)
                 out_buf[i] = in_buf[0];

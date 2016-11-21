@@ -1,8 +1,9 @@
 # 当前目录找不到依赖/目标文件时,去指定路径查找
 VPATH ?= ~/Desktop/DogFood/C/audio_tools:.
 
-SRC := channel_convert.c 
-OBJS := $(SRC:.c=.o) # 加了:前面的变量不能使用后面的变量
+SRC := channel_get.c
+ALL_SRC := $(SRC) buffer.c
+OBJS := $(ALL_SRC:.c=.o) # 加了:前面的变量不能使用后面的变量
 TARGET := $(SRC:.c= )
 
 CC := gcc
@@ -16,7 +17,7 @@ LDFLAGS :=  # 链接器参数,如ld ,最好放在源文件之后.
 .PHONY: all
 
 all: 
-	$(CC) $(CFLAGS) $(CPPFLAGS) $(SRC) $(LDFLAGS) -o $(TARGET)
+	$(CC) $(CFLAGS) $(CPPFLAGS) $(ALL_SRC) $(LDFLAGS) -o $(TARGET)
 
 .PHONY: clean 
 clean:

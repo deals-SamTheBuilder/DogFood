@@ -4,33 +4,18 @@
 	> Mail: yuanweijie1993@gmail.com
 	> Created Time: Mon 21 Nov 2016 04:59:30 PM CST
  ************************************************************************/
-	
+
+/*
+ * Usage: channel_get input_channel(s) input_file output_channel_number output_file
+ *
+ * 获取输入音频的某个通道的数据
+ *
+ */
+
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
-
-void *audio_calloc(size_t n,size_t size)
-{
-    void *men;
-    
-    men = (void *)calloc(n,size);
-    if(men == NULL)
-    {
-        fprintf(stderr,"Error:calloc failed!\n");
-        exit(EXIT_FAILURE);
-    }
-    
-    return men;
-}
-
-void audio_free(void *men)
-{
-    if (men != NULL)
-    {
-        free(men);
-        men = NULL;
-    }
-}
+#include"buffer.h"
 
 int main(int argc, const char *argv[])
 {
@@ -78,26 +63,18 @@ int main(int argc, const char *argv[])
 
     int frame_len = sizeof(short int);
     short int *in_buf = (short int *)audio_calloc(raw,frame_len);
-    short int *out_buf = (short int *)audio_calloc(new,frame_len);
-    
-    int i = 0;
+    short int *out_buf = (short int *)audio_calloc(1,frame_len);
     
     while(1)
     {
         if(fread(in_buf,frame_len,raw,in) != raw)
             break;
 
-        for(i = 0;i <= new;i++)
-        {
-            if (raw == 1)
-                out_buf[i] = in_buf[0];
-            else
-                out_buf[i] = in_buf[i];
-        } 
+        out_buf[0] = in_buf[n-1];
         
-        fwrite(out_buf,frame_len,new,out);
+        fwrite(out_buf,frame_len,1,out);
         memset(in_buf, 0, raw*frame_len);
-        memset(out_buf, 0, new*frame_len);
+        memset(out_buf, 0, 1*frame_len);
     }
    
     printf("\nSuccess\n");
@@ -109,41 +86,3 @@ int main(int argc, const char *argv[])
     
     return 0;
 }
-
-/*static int agn_echo_separate_channel(lua_State *L) 
-{
-    size_t size = 0;
-    const char *data = luaL_checklstring(L, 1, &size);
-    if(data == NULL || size == 0 || (size % 4 != 0))
-    {
-        printf("separate channel failed.\n");
-        lua_pushnil(L);
-        return 1;
-    }
-    int frameLen = size / 4;
-    short int *outData = (short int *)calloc(frameLen, sizeof(short int));
-    if(outData == NULL)
-    {
-        printf("separate channel calloc failed.\n");
-        lua_pushnil(L);
-        return 1;
-    }
-    short int *dataPtr = (short int *)data;
-    int i = 0;
-    for(i = 0; i < frameLen; i++)
-    {
-        outData[i] = dataPtr[2 * i];
-    }
-    lua_pushlstring(L, (char *)outData, frameLen * 2);    //left channel
-    memset(outData, 0, frameLen * 2);
-    for(i = 0; i < frameLen; i++)
-    {
-        outData[i] = dataPtr[2 * i + 1];
-    }
-    lua_pushlstring(L, (char *)outData, frameLen * 2);    //right channel
-    free(outData);
-    return 2;
-
-}*/
-
-
