@@ -85,7 +85,19 @@ int main(int argc,char *argv[])
     }
 
     //printf("%d\n",getw(fp)); //int
-    printf("%u %u\n",get_uint(fp),get_uint(fp)); //uint
+
+
+    unsigned int a = get_uint(fp);
+    if( ferror(fp) )
+    	printf("Error reading file\n");
+    else
+    	printf("%u\n",a); //uint
+
+    unsigned int b = get_uint(fp);
+    if( ferror(fp) )
+    	printf("Error reading file\n");
+    else
+       	printf("%u\n",b); //uint
 
     fclose(fp);
 
