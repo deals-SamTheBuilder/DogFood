@@ -54,12 +54,21 @@ int main(int argc,char *argv[])
     fp = fopen(FILENAME, "wb");
     if (fp == NULL)
     {
-        fprintf(stderr,"Error:open file: %s failed!",FILENAME);
+        fprintf(stderr,"Error:open file: %s failed!\n",FILENAME);
         exit(EXIT_FAILURE);
     }
 
-    put_uint(num[0],fp); //uint
-    put_uint(num[1],fp); //uint
+    if (num[0] != put_uint(num[0],fp)) //uint
+    {
+    	fprintf(stderr,"Error:put_uint failed!\n");
+    	exit(EXIT_FAILURE);
+    }
+    if (num[1] != put_uint(num[1],fp)) //uint
+    {
+    	fprintf(stderr,"Error:put_uint failed!\n");
+    	exit(EXIT_FAILURE);
+    }
+
     //putw(238,fp); //int
 
     fclose(fp);
@@ -67,7 +76,7 @@ int main(int argc,char *argv[])
     fp = fopen(FILENAME, "rb");
     if (fp == NULL)
     {
-        fprintf(stderr,"Error:open file: %s failed!",FILENAME);
+        fprintf(stderr,"Error:open file: %s failed!\n",FILENAME);
         exit(EXIT_FAILURE);
     }
 
@@ -78,7 +87,7 @@ int main(int argc,char *argv[])
 
     /* remove tmp file */
     if (remove(FILENAME) != 0)
-    	fprintf(stderr,"Error:remove file: %s failed!",FILENAME);
+    	fprintf(stderr,"Error:remove file: %s failed!\n",FILENAME);
 
     return 0;
 }
