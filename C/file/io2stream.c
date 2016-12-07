@@ -33,7 +33,7 @@ static unsigned int get_uint(FILE *fp)
     return i;
 }
 
-static unsigned int put_uint(unsigned int i,FILE*fp)
+static unsigned int put_uint(unsigned int i,FILE *fp)
 {
     unsigned char *s;
     s=(unsigned char *)&i;
@@ -48,36 +48,6 @@ static unsigned int put_uint(unsigned int i,FILE*fp)
     return i;
 }
 
-static unsigned int get_long(FILE *fp)
-{
-    unsigned char *s;
-    unsigned int i;
-    s = (unsigned char *)&i;
-    s[0]=getc(fp);
-    printf("%x\n",s[0]);
-    s[1]=getc(fp);
-    printf("%x\n",s[1]);
-    s[2]=getc(fp);
-    printf("%x\n",s[2]);
-    s[3]=getc(fp);
-    printf("%x\n",s[3]);
-    return i;
-}
-
-static unsigned int put_long(unsigned int i,FILE*fp)
-{
-    unsigned char *s;
-    s=(unsigned char *)&i;
-    putc(s[0],fp);
-    //printf("%x\n",s[0]);
-    putc(s[1],fp);
-    //printf("%x\n",s[1]);
-    putc(s[2],fp);
-    //printf("%x\n",s[2]);
-    putc(s[3],fp);
-    //printf("%x\n",s[3]);
-    return i;
-}
 
 int main(int argc,char *argv[])
 {
