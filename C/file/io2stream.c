@@ -69,7 +69,11 @@ int main(int argc,char *argv[])
     	exit(EXIT_FAILURE);
     }
 
-    //putw(238,fp); //int
+    //if (238 != putw(238,fp)) //int
+    //{
+    //	fprintf(stderr,"Error:putw failed!\n");
+    //	exit(EXIT_FAILURE);
+    //}
 
     fclose(fp);
 
