@@ -1,5 +1,5 @@
 /*************************************************************************
-	> File Name: test.c
+	> File Name: bt.c
 	> Author: weijie.yuan
 	> Mail: yuanweijie1993@gmail.com
 	> Created Time: Mon 12 Dec 2016 03:59:26 PM CST
@@ -10,7 +10,7 @@
 #include <execinfo.h>
 
 /* stack's max depth to print */
-#define DUMP_STACK_DEPTH_MAX 16
+#define DUMP_STACK_DEPTH_MAX 100
 
 /* print stack */
 void print_trace()
@@ -35,20 +35,9 @@ void print_trace()
     printf("Obtained %zd stack frames.\n",depth);
     for(i = 0;i < depth;i++)
     {
-        printf(" [%zd] %s \n",i,strings[i]);
-    }
+        printf("%p : %s \n",array[i],strings[i]);
+    } 
 
     free(strings);
     strings = NULL;
-}
-
-void dummy_function()
-{
-    print_trace();
-}
-
-int main(void)
-{
-    dummy_function();
-    return 0;
 }

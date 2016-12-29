@@ -1,12 +1,12 @@
 VPATH ?= .:$VPATH
 
-SRC = ./test.c
+SRC = ./main.c ./bt.c
 
-TARGET := ./test
+TARGET := ./bt
 
 CC := gcc
 RM := -rm -rf
-CFLAGS := -Wall -O2 -fPIC -rdynamic
+CFLAGS := -Wall -O2 -I . -rdynamic
 
 #############################
 
