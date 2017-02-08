@@ -33,7 +33,7 @@ int client_init(const unsigned short int port,const char *hostname)
     struct hostent *h;
     char ip[16];
 
-    if((sockfd = socket(PF_INET,SOCK_STREAM,0)) < 0)
+    if((sockfd = socket(AF_INET,SOCK_STREAM,0)) < 0)
     {
         perror("Socket Error");
         exit(EXIT_FAILURE);
@@ -50,14 +50,21 @@ int client_init(const unsigned short int port,const char *hostname)
     servaddr.sin_family = AF_INET;
     servaddr.sin_port = htons(port);
 
-    if((h = gethostbyname(hostname)) == NULL)
+    if (inet_pton(servaddr.sin_family,hostname,(void *)&servaddr.sin_addr) > 0)
     {
-        fprintf(stderr,"Gethostbyname error for host:%s\n",hostname);
+        printf("Server ip is %s\n",hostname);
+    }
+    else if ((h = gethostbyname(hostname)) != NULL)
+    {
+        inet_ntop(servaddr.sin_family,h->h_addr,ip,sizeof(ip));
+        printf("%s's ip is %s\n",hostname,ip);
+        inet_pton(servaddr.sin_family,ip,(void *)&servaddr.sin_addr);
+    }
+    else
+    {
+        fprintf(stderr,"Hostname is invailed: %s\n",hostname);
         exit(EXIT_FAILURE);
     }
-    inet_ntop(h->h_addrtype,h->h_addr,ip,sizeof(ip));
-    printf("%s's ip is %s\n",hostname,ip);
-    inet_pton(h->h_addrtype,ip,&servaddr.sin_addr);
 
     return sockfd;
 }
