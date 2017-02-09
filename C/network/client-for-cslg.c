@@ -97,7 +97,7 @@ int main(int argc ,const char *argv[])
         exit(EXIT_FAILURE);
     }
 
-    ret = connect(fd,(struct sockaddr *)&servaddr,sizeof(servaddr));
+    ret = my_connect(fd,(struct sockaddr *)&servaddr,sizeof(servaddr));
     fd_set rset,wset;
     FD_ZERO(&rset);
     FD_ZERO(&wset);
