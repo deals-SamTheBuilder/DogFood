@@ -88,7 +88,7 @@ endif
 
 #################
 # 显示指明伪目标,避免和文件重名,伪目标只是一个标签,不是一个文件.
-.PHONY: hello install print dist TAGS check test
+.PHONY: hello install print dist TAGS check test uninstall
 define hi
 	@echo $(tips) # @不显示命令,只执行命令
 endef
@@ -114,6 +114,13 @@ install: $(TARGET)
 	install -d $(DESTDIR)/dir  #/usr/local/share/doc/$(TARGET) # 创建目录
 	install -m 644 $(COPYRIGHT) $(DESTDIR)/dir
 	install -m 644 $(CHANGELOG) $(DESTDIR)/dir
+
+uninstall:
+	$(RM) $(DESTDIR)/$(TARGET) # /usr/local/bin # 复制,删除符号表信息
+	$(RM) $(DESTDIR)/$(MANFILE) # /usr/local/man/man1 # 复制,更改权限
+	$(RM) $(DESTDIR)/dir  #/usr/local/share/doc/$(TARGET) # 创建目录
+	$(RM) $(DESTDIR)/dir/$(COPYRIGHT)
+	$(RM) $(DESTDIR)/dir/$(CHANGELOG)
 
 #######################
 .PHONY: cleantar clean cleanobj cleangen cleanso tar
