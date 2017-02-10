@@ -9,8 +9,8 @@ HELLO_OBJS := ./print.o
 HELLO_TARGET := ./libhello.so
 TARGET := test
 
-CC := gcc
-PLUS := g++
+CC ?= gcc
+PLUS ?= g++
 RM := -rm -rf # -表示命令出错.继续执行,忽略错误.
 CPPFLAGS := -I ./# C预处理参数,一般设置I
 CFLAGS := -Wall -O2 -m64 -D_GNU_SOURCE -fPIC # 编译器参数,C使用
@@ -19,6 +19,11 @@ CFLAGS += -D__ANSWER__ #宏定义
 CXXFLAGS := # C++使用
 LDFLAGS :=  -L. -lhello # 链接器参数,如ld ,最好放在源文件之后.
 LDSHFLAGS := -shared # 动态库编译参数
+
+STRIP ?= strip 
+STRIPFLAGS := --strip-unneeded # 只可用于动态库和可执行程序 # --strip-debug
+
+VERSION := 1.0
 
 autoGenerate := yes # 是否自动生成依赖
 rely := $(SRC:.c=.d) # 生成.d文件
@@ -37,10 +42,12 @@ rely := $(SRC:.c=.d) # 生成.d文件
 all: $(TARGET) # 默认只更新第一个目标,若有all,则可以指定多个目标
 $(TARGET): $(OBJS)
 	$(PLUS) $(CFLAGS) $^ -o $@
+	$(STRIP) --strip-unneeded $(TARGET)
 
 so : $(HELLO_TARGET)
 $(HELLO_TARGET): $(HELLO_OBJS)
 	$(PLUS) $(LDSHFLAGS) $^ -o $@
+	$(STRIP) --strip-unneeded $(so)
 
 # 命令包
 define generate-objs
@@ -81,7 +88,7 @@ endif
 
 #################
 # 显示指明伪目标,避免和文件重名,伪目标只是一个标签,不是一个文件.
-.PHONY: hello install print tar dist TAGS check test
+.PHONY: hello install print dist TAGS check test
 define hi
 	@echo $(tips) # @不显示命令,只执行命令
 endef
@@ -95,15 +102,29 @@ endif
 hello:
 	$(hi)
 
-install:
+
+DESTDIR ?= ~/Desktop/tmp
+MANFILE := test.1
+CHANGELOG := test.1
+COPYRIGHT := test.1
+
+install: $(TARGET)
+	install -s $^ $(DESTDIR) # /usr/local/bin # 复制,删除符号表信息
+	install -m 644 $(MANFILE) $(DESTDIR) # /usr/local/man/man1 # 复制,更改权限
+	install -d $(DESTDIR)/dir  #/usr/local/share/doc/$(TARGET) # 创建目录
+	install -m 644 $(COPYRIGHT) $(DESTDIR)/dir
+	install -m 644 $(CHANGELOG) $(DESTDIR)/dir
 
 #######################
-.PHONY: cleantar clean cleanobj cleangen cleanso
+.PHONY: cleantar clean cleanobj cleangen cleanso tar
 # 伪目标同样也可成为依赖
 
-clean: cleantar cleanobj cleangen cleanso
+TMPDIR1 := ./temp
+TMPDIR := $(TMPDIR1)/$(TARGET)-$(VERSION)
 
-cleantar:
+clean: cleantarget cleanobj cleangen cleanso cleantar 
+
+cleantarget:
 	$(RM) $(TARGET)
 
 cleanobj:
@@ -114,3 +135,12 @@ cleangen:
 
 cleanso:
 	$(RM) $(HELLO_TARGET)
+
+cleantar:
+	$(RM) $(TMPDIR) $(TMPDIR1)
+
+tar: clean
+	$(RM) $(TMPDIR)
+	install -d $(TMPDIR)
+	-cp -p * $(TMPDIR)
+	-cd $(TMPDIR) && cd .. && tar cvzf $(TARGET)-$(VERSION).tar.gz $(TARGET)-$(VERSION)
